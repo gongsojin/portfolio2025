@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* font */
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+html{
+	scroll-behavior: smooth;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333;
+	min-width: 1320px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+/* header */
+header{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	padding-top: 20px;
+	justify-content: center;
+	background-color: #adcebd;
+}
+header a{
+    display: block;
+}
+
+/* 중앙 전체 */
+#wrap{
+    width: 1320px;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: center;
+	align-items: flex-start;
+	gap: 120px;
+}
+
+
+/* 상세페이지 */
+.detail_wrap {
+	width: 700px;
+}
+.main img{
+	width: 100%;
+}
+
+
+/* 제품 정보 */
+.info img{
+	width: 100%;
+	padding-top: 30px;
+}
+.info{
+    padding: 20px 20px 0 ;
+}
+.info h1 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
+/* 상품 주문창 */
+#product {
+	width: 400px;
+	position: sticky;
+	top: 0;
+	padding-top: 50px;
+}
+
+.right h1 {
+	font-weight: 500;
+	font-size: 27px;
+}
+
+.right h2 {
+	font-size: 24px;
+	font-weight: 500;
+	margin-top: 30px;
+}
+
+.right h3 {
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 30px;
+}
+
+.right dl {
+	margin: 10px 5px;
+}
+
+.right dt {
+	padding-bottom: 5px;
+}
+
+.border {
+	border-bottom: 1.5px solid #131316;
+	padding-bottom: 20px;
+}
+
+.selectbox{
+	margin: 20px 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+.selectbox th{
+	text-align: left;
+	font-weight: 400;
+}
+.selectbox th, .selectbox td{
+	padding: 10px 0;
+}
+.selectbox select{
+	outline: none;
+	width: 100%;
+	padding: 10px;
+}
+
+.order {
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
+}
+
+.order li{
+	flex: 1;
+	text-align: center;
+}
+
+.order li a {
+	border: 1px #4c8668 solid;
+	color: #333;
+	display: block;
+	padding: 20px 0;
+	border-radius: 20px;
+	transition: all 0.3s;
+}
+
+.order li:nth-child(2) a {
+	background-color: #4c8668;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+.order li a:hover {
+	background-color:#07924a;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+/* 푸터 */
+.footer {
+	background-color: #0a3b22;
+	height: 80px;
+}
+
+
+/* 탑 버튼 */
+.btn{
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	z-index: 99;
+	text-align: center;
+}
+.btn li a{
+	display: inline-block;
+	padding: 20px 10px;
+	width: 50px;
+	margin-bottom: 10px;
+	border: #333 1px solid;
+	border-radius: 20px;
+	transition: all 0.5s;
+	background-color: #fff;
+}
+.btn li a:hover{
+	background-color: #333;
+	color: #fff;
+	transition: all 0.5s;
+}
+
