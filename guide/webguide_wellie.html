@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Guide</title>
+    <link rel="icon" type="image/png" sizes="35x35" href="./img/wellie_favicon.png">
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            
+            font-family: 'Pretendard-Regular';
+            font-style: normal;
+            overflow-x: hidden;
+        }
+        body{
+            background: linear-gradient(#96d5ec65,#c5e4d679);
+        }
+        a {
+            text-decoration: none;
+            
+            z-index: 9999;
+        }
+
+        a:active {
+            
+            z-index: 9999;
+        }
+        
+        .fixed_box {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 40px;
+        }
+        #top {
+            max-width: 1320px;
+            margin: 0 auto;
+            overflow: visible;
+            box-shadow: 10px 10px 30px #00000010;
+        }
+        #top img {
+            width: 100%;
+            display: block;
+        }
+        ul {
+            list-style: none;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            text-align: center;
+        }
+        ul li {
+            margin: 10px;
+        }
+        ul li a {
+            transition: all 0.5s;
+            border: 1px solid #333;
+            color: #333;
+            background-color: #ffffff0a;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 10px 10px 0;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: 50px;
+            height: 30px;  
+        }
+        .button a:hover {
+            transition: all 0.5s;
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sparkle-container"></div>
+
+<div id="top">
+  <img src="../guide/img/web_guide_wellie.jpg" alt="web_guide_wellie">
+</div>
+
+<ul class="button">
+  <li><a href="#top">Top</a></li>
+  <li><a href="../index.html#branding">Home</a></li>
+</ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 500);//움직이는 시간 조정
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <!--이동시 부드럽게 이동-->
+    <script>
+        $(function () {
+            let lastSparkleTime = 0;
+
+            document.addEventListener("mousemove", function (e) {
+                const now = Date.now();
+
+                if (now - lastSparkleTime > 100) {
+                    const sparkle = document.createElement("div");
+                    sparkle.classList.add("sparkle");
+
+                    sparkle.style.left = `${e.pageX}px`;
+                    sparkle.style.top = `${e.pageY}px`;
+
+                    document.getElementById("sparkle-container").appendChild(sparkle);
+
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 1000);
+
+                    lastSparkleTime = now;
+                }
+            });
+        });
+    </script>
+    <!-- 마우스반짝이 -->
+
+</body>
+
+</html>
